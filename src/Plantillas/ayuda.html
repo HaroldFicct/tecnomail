@@ -1,0 +1,542 @@
+<p><strong>CONSIDERACIONES</strong></p>
+<p style="text-align:left"><strong>1)</strong> No ingresar caracteres especiales, la letra Ñ (ñ), ni caracteres con tíldes.</p>
+<p style="text-align:left"><strong>2)</strong> El formato para fechas es AAAA-MM-DD, por ejemplo 1998-03-14.</p>
+<p style="text-align:left"><strong>3)</strong> El sexo es el caracter 'F' para femenino y 'M' para masculino.</p>
+<p style="text-align:left"><strong>4)</strong> Solo se aceptaran numeros de celular de hasta 12 digitos.</p>
+<p style="text-align:left"><strong>5)</strong> Solo se aceptan contraseñas de 8 a 10 caracteres, minimo una minuscula, mayuscula, numero y caracter especial.</p>
+<table>
+<p style="text-align:left"><strong>6)</strong> Todos los campos que contengan espacios entre medio, deben ser reemplazados por el barra baja _  EJ: Agustín_Rossi</p>
+<table>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <thead>
+        <tr>
+            <th scope="col" colspan="2" style="text-align: center;">
+                Casos de uso Sistema para EMAIL
+                <br></br>
+            </th>
+        </tr>
+    </thead>
+<!-- +++++++++++++++++++++++++++ CASO DE USO 1: GESTIONAR USUARIOS ++++++++++++++++++++++++++++++++++++++ -->
+    <tbody>
+        
+        <tr style="color: #FFFFFF; background-color: #000;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU1: GESTIONAR PERIODO
+                </strong>
+            </td>
+        </tr> 
+<!-- +++++++++++++++++++++++++++++++++++++++ REGISTRAR ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar Periodo
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REGPER: nombre:semestre:año
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REGPER: 2022-2:2:2022
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++ Modificar +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Modificar datos de un periodo
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> EDITPER: id:nombre:semestre:año
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> EDITPER: 3:2022-1:1:2022
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++ ELIMINAR UN USUARIO ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="color: #000; background-color: #9b9b9b">
+    <td class="item-stock" colspan="2">
+        <strong>
+            Eliminar un Periodo
+        </strong>
+    </td>
+</tr>
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        FORMATO --> DELPER:id
+    </td>
+</tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<tr style="background-color: #eeeeee">
+    <td class="item-stock" colspan="2">
+        EJEMPLO --> DELPER:4
+        <br>
+    </td>
+</tr>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++ VER +++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Ver datos del periodo
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> VERPER:id
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> VERPER:3
+                <br>
+            </td>
+        </tr>
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar periodos
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> LISPER:fechaInicio:fechaFin
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> LISPER:2022-01-01:2022-12-30
+                <br>
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++ CASO DE USO 2: GESTIONAR PRODUCTOS +++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #FFFFFF; background-color: #000;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU8: GESTIONAR REPORTES
+                </strong>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ REGISTRAR ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Reporte postulante por periodo
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REPORPOSPER:fechaInicio:fechaFin
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO1 --> REPORPOSPER:2022-01-01:2022-03-10
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ MODIFICAR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Reporte Auxiliar por carga horaria
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REPORAUXCAR:todos
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REPORAUXCAR:*
+                <br>
+            </td>
+        </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ ELIMINAR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Reporte Materia por producto
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REPORMATGRUP
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REPORMATGRUP:*
+                <br>
+            </td>
+        </tr>
+
+
+        <!-- CASOS DE USO RODRIGO -->
+        
+        <!-- GESTIONAR MATERIAS -->
+        <tr style="color: #FFFFFF; background-color: #000;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU4: GESTIONAR MATERIAS
+                </strong>
+            </td>
+        </tr> 
+
+        <!-- LISTAR MATERIAS -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar Materias
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO SIN FILTROS --> LISMAT 
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO CON FILTROS --> LISMAT:nombre=valor:sigla=valor 
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO SIN FILTROS --> LISMAT (devuelve todas)
+                <br>
+            </td>
+        </tr>
+
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> LISMAT:nombre=Discretas:sigla=INF (devuelve filtrado)
+                <br>
+            </td>
+        </tr>
+
+        <!-- REGISTRAR MATERIA -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar Materia
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REGMAT:nombre=valor:sigla=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REGMAT:nombre=Estructuras_Discretas:sigla=INF119 
+                <br>
+            </td>
+        </tr>
+
+        <!-- VER MATERIA -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Ver una Materia
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> VERMAT:id=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> VERMAT:id=12
+                <br>
+            </td>
+        </tr>
+
+        <!-- ELIMINAR MATERIA -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Eliminar una Materia
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> DELMAT:id=valor
+            </td>
+        </tr>
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> DELMAT:id=15
+                <br>
+            </td>
+        </tr>
+
+    
+
+        <!-- GESTIONAR GRUPOS MATERIA -->
+        <tr style="color: #FFFFFF; background-color: #000;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU4: GESTIONAR GRUPOS DE MATERIA
+                </strong>
+            </td>
+        </tr> 
+
+        <!-- LISTAR -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar Grupos
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO SIN FLITROS --> LISTMATGRUP
+                
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO CON FILTROS --> LISTMATGRUP:materia=valor:sigla=valor:grupo=valor:carrera=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO SIN FILTROS --> LISTMATGRUP
+                <br>
+            </td>
+        </tr>
+
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO CON FILTROS --> LISTMATGRUP:materia=Prog:sigla=INF:grupo=SB:carrera=sistemas
+                <br>
+            </td>
+        </tr>
+
+        <!-- REGISTRAR -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar Grupo
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REGMATGRUP:materia=valor:grupo=valor:horario=valor:docente=valor:carrera=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REGMATGRUP:materia=INF119:grupo=SA:horario=19.45-21.30_lun-mie-vi:docente=3:carrera=2
+                <br>
+            </td>
+        </tr>
+
+
+        <!-- GESTIONAR POSTULANTES -->
+        <tr style="color: #FFFFFF; background-color: #000;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU5: GESTIONAR POSTULANTES
+                </strong>
+            </td>
+        </tr> 
+
+        <!-- LISTAR POSTULANTES -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar Postulantes
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO SIN FILTROS --> LISPOS
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO CON FILTROS --> LISPOS:nombre=valor:periodo=valor:carrera=valor 
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO SIN FILTROS --> LISPOS
+                <br>
+            </td>
+        </tr>
+
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> LISPOS:nombre=Javier:periodo=2:carrera=2 
+                <br>
+            </td>
+        </tr>
+
+        <!-- REGISTRAR POSTULANTE -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar Postulante
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REGPOS:nombres=valor:apellidos=valor:registro=valor:ci=valor:carrera=valor:periodo=valor:materias=valor1,valor2...
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REGPOS:nombres=Rodrigo_Jesus:apellidos=Duarte_Barrientos:registro=218017243:ci=8616461:carrera=1:periodo=1:materias=INF110,INF119,INF220
+                <br>
+            </td>
+        </tr>
+
+        <!-- VER POSTULANTE -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Ver Postulante
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> VERPOS:registro=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> VERPOS:registro=218017243
+                <br>
+            </td>
+        </tr>
+
+
+        <!-- GESTIONAR EVALUACIONES -->
+        <tr style="color: #FFFFFF; background-color: #000;">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    CU6: GESTIONAR EVALUACIONES
+                </strong>
+            </td>
+        </tr> 
+
+        <!-- LISTAR -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar Evaluaciones
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO SIN FILTROS --> LISEVAL
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO CON FILTROS --> LISEVAL:sigla=valor:periodo=valor:docente=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO SIN FILTROS --> LISEVAL
+                <br>
+            </td>
+        </tr>
+
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> LISEVAL:sigla=INF110:periodo=1-2021:docente=Jorge_Gonzalez
+                <br>
+            </td>
+        </tr>
+
+        <!-- REGISTRAR -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Listar Evaluaciones de Postulante
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> LISEVALPOS:registro=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> LISEVALPOS:registro=218017243
+                <br>
+            </td>
+        </tr>
+
+        <!-- REGISTRAR -->
+        <tr style="color: #000; background-color: #9b9b9b">
+            <td class="item-stock" colspan="2">
+                <strong>
+                    Registrar Evaluacion
+                </strong>
+            </td>
+        </tr>
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                FORMATO --> REGEVAL:materia=valor:periodo=valor:docente=valor:fecha=valor
+            </td>
+        </tr>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <tr style="background-color: #eeeeee">
+            <td class="item-stock" colspan="2">
+                EJEMPLO --> REGEVAL:materia=INF115:periodo=3:docente=4:fecha=2022.08.19-19.45
+                <br>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
