@@ -44,6 +44,7 @@ public class Comando {
     public NCarrera nCarrera;  
     public NCategoria nCategoria;
     public NLibro nLibro;
+    public NTesis nTesis;
     
     public Comando() {
     }
@@ -198,6 +199,34 @@ public class Comando {
                     }
                     nLibro= new NLibro();
                     nLibro.insertar(arg);                     
+                } else {
+                    System.out.println("ERROR: LOS DATOS INTRODUCIDOS NO TIENEN EL FORMATO CORRECTO");
+                    salida.sendHtmlEmail(from, "ERROR: LOS DATOS INTRODUCIDOS NO TIENEN EL FORMATO CORRECTO", ToHTML.getHTMLMessage("Los datos introducidos no tiene el formato correcto", "Verifique que los datos enviados tengan el formato y orden correcto"));
+                }
+            }else {
+                System.out.println("ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS");
+                salida.sendHtmlEmail(from, "ERROR: LA CANTIDAD DE LOS DATOS SON INCORRECTOS", ToHTML.getHTMLMessage("Cantidad incorrecta de datos ", "Revisa que la cantidad de datos sea correcta"));
+            }
+        break;
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                          Caso de uso 6 Gestionar tesis
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Registrar Tesis    REGTES:docker para desarrolladores:Jorge luis condori:18/01/2022/:Braulio caceres:Docker desarrollador tesis:5
+        case "REGTES":
+            if(parametros.size()==7){
+                String titulo = parametros.get(1);
+                String autor = parametros.get(2);
+                String fecha = parametros.get(3);
+                String asesor = parametros.get(4);
+                String palabrasclave= parametros.get(5);
+                String carreracodigo = parametros.get(6);
+                if (validar.isNumber(carreracodigo)){
+                    LinkedList<String> arg = new LinkedList<>();    
+                    for (int i = 1; i < 7; i++) {
+                        arg.add(parametros.get(i));
+                    }
+                    nTesis= new NTesis();
+                    nTesis.insertar(arg);                     
                 } else {
                     System.out.println("ERROR: LOS DATOS INTRODUCIDOS NO TIENEN EL FORMATO CORRECTO");
                     salida.sendHtmlEmail(from, "ERROR: LOS DATOS INTRODUCIDOS NO TIENEN EL FORMATO CORRECTO", ToHTML.getHTMLMessage("Los datos introducidos no tiene el formato correcto", "Verifique que los datos enviados tengan el formato y orden correcto"));

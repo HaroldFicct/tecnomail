@@ -21,6 +21,7 @@ public class Validador {
                 "REGCARR",
                 "REGCAT",
                 "REGLIB",
+                "REGTES",
                 
                 //Comandos de Erick
                 "LISTARUSUARIO",
