@@ -10,7 +10,9 @@ public class DLector {
     
     private String nombre;
     private String carnet;    
-
+    private String correo;
+    private String telefono;
+    
     public int getId() {
         return id;
     }
@@ -18,8 +20,7 @@ public class DLector {
     public void setId(int id) {
         this.id = id;
     }
-    private String correo;
-    private String telefono;
+
 
     public DLector(){
         this.nombre="";

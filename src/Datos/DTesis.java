@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 
 public class DTesis {
-    
+
     private int id;
 
     private String titulo;
@@ -14,7 +14,7 @@ public class DTesis {
     private String asesor;
     private String palabrasclave;
     private int carreracodigo;
-   
+
     public DTesis() {
 
         this.titulo = "";
@@ -26,7 +26,7 @@ public class DTesis {
 
     }
 
-    public DTesis(String titulo, String autor, String fecha, String asesor,String palabraclave,int  carreracodigo) {
+    public DTesis(String titulo, String autor, String fecha, String asesor, String palabraclave, int carreracodigo) {
 
         this.titulo = titulo;
         this.autor = autor;
@@ -91,30 +91,29 @@ public class DTesis {
     public void setCarreracodigo(int carreracodigo) {
         this.carreracodigo = carreracodigo;
     }
-    
-    
+
     //---------------------------------Listar----------------------------------------------------------------------------------------------
-        public LinkedList<String> listar() {
+    public LinkedList<String> listar() {
         LinkedList<String> datos = new LinkedList<>();
         DBConnection connection = new DBConnection();
         try {
             if (connection.connect()) {
-                String sql = "select " +
-                        "tesis.id, " +
-                        "tesis.titulo, " +
-                        "tesis.autor, " +
-                        "tesis.fecha, " +
-                        "tesis.asesor " +
-                        "tesis.palabrasclave " +
-                        "tesis.carreracodigo " +
-                        "from tesis";
+                String sql = "select "
+                        + "tesis.id, "
+                        + "tesis.titulo, "
+                        + "tesis.autor, "
+                        + "tesis.fecha, "
+                        + "tesis.asesor "
+                        + "tesis.palabrasclave "
+                        + "tesis.carreracodigo "
+                        + "from tesis";
                 ResultSet result = connection.select(sql);
                 //System.out.println(result);
                 while (result.next()) {
                     datos.add(Integer.toString(result.getInt("id")));
                     datos.add(result.getString("titulo"));
                     datos.add(result.getString("autor"));
-                    datos.add(Integer.toString(result.getInt("fecha")));
+                    datos.add(result.getString("fecha"));
                     datos.add(result.getString("asesor"));
                     datos.add(result.getString("palabrasclave"));
                     datos.add(Integer.toString(result.getInt("carrerascodigo")));
@@ -125,58 +124,66 @@ public class DTesis {
             System.out.println(e);
         }
         return datos;
-    } 
+    }
+
     //----------------------------------------- Modificar------------------------------------------------------------------------------
-        public void modificar(){
-        DBConnection connection = new DBConnection(); 
-        try {  
+    public void modificar() {
+        DBConnection connection = new DBConnection();
+        try {
             if (connection.connect()) {
-                String sql = "update libro set "
-                    + "titulo= '"+getTitulo()
-                    + "', autor= '"+getAutor()
-                    + "', cantidad= '"+getCantidad()
-                    + "', categoriacodigo= '"+getCatcodigo()
-                    +"' where id="+getId()+";";
+                String sql = "update tesis set "
+                        + "titulo= '" + getTitulo()
+                        + "', autor= '" + getAutor()
+                        + "', fecha= '" + getFecha()
+                        + "', asesor= '" + getAsesor()
+                        + "', palabrasclave= '" + getPalabrasclave()
+                        + "', carreracodigo= '" + getCarreracodigo()
+                        + "' where id=" + getId() + ";";
                 connection.update(sql);
                 connection.close();
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println(e);
         }
     }
-        
-    
+
     //------------------------insertar un nuevo usuario--------------------------------------------------------------------------------
     public void insertar() {
         DBConnection connection = new DBConnection();
-        try {        
+        try {
             if (connection.connect()) {
-                String sql = "insert into libro ("
-                    + "titulo, "
-                    + "autor, "
-                    + "cantidad, "
-                    + "categoriacodigo "
-                    + ") values "
-                    +"('"
-                        +getTitulo()+"', '"
-                        +getAutor()+"', '"
-                        +getCantidad()+"', '"
-                        +getCatcodigo()
-                    +"');";
+                String sql = "insert into tesis ("
+                        + "titulo, "
+                        + "autor, "
+                        + "fecha, "
+                        + "asesor, "
+                        + "palabrasclave, "
+                        + "carreracodigo "
+                        + ") values "
+                        + "('"
+                        + getTitulo() + "', '"
+                        + getAutor() + "', '"
+                        + getFecha() + "', '"
+                        + getAsesor() + "', '"
+                        + getPalabrasclave() + "', '"
+                        + getCarreracodigo()
+                        + "');";
                 connection.insert(sql);
                 connection.close();
             }
         } catch (SQLException e) {
             System.out.println(e);
         }
-    }    
+    }
+
+   
         //---------------------------------------------Eliminar un Administrador -----------------------------------------------------------------
     
         public void eliminar() { 
         DBConnection connection = new DBConnection();
         try {
             if (connection.connect()) {
-                String sql = "delete from libro where id = "+getId()+";";
+                String sql = "delete from tesis where id = "+getId()+";";
                 connection.delete(sql);
                 connection.close();
             }
@@ -184,14 +191,14 @@ public class DTesis {
             System.out.println(e);
         }
     }     
-        
+         
          //------------------ Verificador de existencia de una tupla por su id -------------------------------------------------------------
     public boolean existeID() {
         boolean b = false;
         DBConnection connection = new DBConnection();
         try {
             if (connection.connect()) {
-                String sql = "select * from libro where id = "+getId()+";";
+                String sql = "select * from tesis where id = "+getId()+";";
                 ResultSet result = connection.select(sql);
                 while (result.next()) {
                   b = true;
@@ -203,7 +210,7 @@ public class DTesis {
         }
         return b;
     }   
-    
+  
      
     //----------------------------------Buscar por id solo un objeto y mostrarlo-------------------------------------------------------
     public LinkedList<String> mostrarID() {
@@ -212,20 +219,22 @@ public class DTesis {
         try {
             if (connection.connect()) {
                 String sql = "select " +
-                "libro.id, " +
-                "libro.titulo, " +
-                "libro.autor, " +
-                "libro.cantidad, " +
-                "libro.categoriacodigo " +
-                "from libro" +
-                "where libro.id="+getId()+";";
+                "tesis.id, " +
+                "tesis.titulo, " +
+                "tesis.autor, " +
+                "tesis.fecha, " +
+                "tesis.carreracodigo " +
+                "from tesis" +
+                "where tesis.id="+getId()+";";
                 ResultSet result = connection.select(sql); 
                 while (result.next()) {
                     datos.add(Integer.toString(result.getInt("id")));
                     datos.add(result.getString("titulo"));
                     datos.add(result.getString("autor"));
-                    datos.add(Integer.toString(result.getInt("cantidad")));
-                    datos.add(Integer.toString(result.getInt("catcodigo")));
+                    datos.add(result.getString("fecha"));
+                    datos.add(result.getString("asesor"));
+                    datos.add(result.getString("palabrasclave"));
+                    datos.add(Integer.toString(result.getInt("carreracodigo")));
                 }
                 connection.close();
             }

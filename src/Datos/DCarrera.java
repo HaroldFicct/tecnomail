@@ -161,6 +161,25 @@ public class DCarrera {
         return b;
     }
     
+    
+        //-----------------------------------------existe dewey------------------------------------------------------------------
+      public boolean existecarrera() {
+        boolean b = false;
+        DBConnection connection = new DBConnection();
+        try {
+            if (connection.connect()) {
+                String sql = "select * from carrera where codigo = "+getCodigo()+";";
+                ResultSet result = connection.select(sql);
+                while (result.next()) {
+                  b = true;
+                }
+                connection.close();  
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return b;
+    }
     //----------------------------------Buscar por id solo un objeto y mostrarlo-------------------------------------------------------
     public LinkedList<String> mostrarID() {
         LinkedList<String> datos = new LinkedList<>();
@@ -187,6 +206,32 @@ public class DCarrera {
             System.out.println(e);
         }
         return datos;
+    }
+    
+            public int getidbycodigo() {
+        LinkedList<String> datos = new LinkedList<>();
+        int ide=0;
+        DBConnection connection = new DBConnection();
+        try {
+            if (connection.connect()) {
+                
+                String sql = "select * from carrera where codigo = "+getCodigo()+";";
+                
+                
+                ResultSet result = connection.select(sql); 
+                while (result.next()) {
+                    datos.add(Integer.toString(result.getInt("id")));
+                    datos.add(result.getString("nombre"));
+                    datos.add(result.getString("sigla"));
+                    datos.add(Integer.toString(result.getInt("codigo")));
+                    ide=Integer.parseInt(datos.get(0));
+                }
+                connection.close();
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return ide;
     }
     
 }
