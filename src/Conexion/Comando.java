@@ -182,7 +182,7 @@ public class Comando {
         break;
         
         
-        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //                          Caso de uso 5 Gestionar LIBRO
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //              registrar CATEGORIAS     REGLIB:matematicas discretas:Braulio:20:500
@@ -211,10 +211,14 @@ public class Comando {
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //                          Caso de uso 6 Gestionar tesis
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//Registrar Tesis    REGTES:docker para desarrolladores:Jorge luis condori:18/01/2022/:Braulio caceres:Docker desarrollador tesis:5
+//Registrar Tesis    REGTES:DOCKER PARA DESARROLLADORES:JORGE LUIS CHAVEZ:2022/01/31:DUNNIA:DOCKER PROGRAMADORES TESIS:5
+
+//                   REGTES:Docker ForDev:Jorge Chavez:2022/12/31:Dunnia:Docker fordev:5
+//                   REGTES:Docker para desarrolladores:Jorge Chavez:2022/12/31:Dunnia:Docker fordev:5
+
         case "REGTES":
             if(parametros.size()==7){
-                String titulo = parametros.get(1);
+                String titulo = parametros.get(1).replace(' ','_');
                 String autor = parametros.get(2);
                 String fecha = parametros.get(3);
                 String asesor = parametros.get(4);
@@ -224,6 +228,7 @@ public class Comando {
                     LinkedList<String> arg = new LinkedList<>();    
                     for (int i = 1; i < 7; i++) {
                         arg.add(parametros.get(i));
+                        System.out.println(arg.get(i));
                     }
                     nTesis= new NTesis();
                     nTesis.insertar(arg);                     
@@ -996,7 +1001,7 @@ public class Comando {
 //  LISTARCARGAHORARIAAUXILIARESFILTRADOPORAPELLIDODEDOCENTE:{apellido_de_docente}               //:{cod....|.....}
         case "LISTARCARGAHORARIAAUXILIARESFILTRADOPORAPELLIDODEDOCENTE": 
             if (parametros.size() == 2) {
-                String apellido_de_docente = parametros.get(1).replace('_',' ');
+                String apellido_de_docente = parametros.get(1).replace(' ','_');
                 if(validar.isNameText(apellido_de_docente)){
                     LinkedList<String> campos = new LinkedList<>();
                     campos.add("CODIGO_AUXILIAR");
